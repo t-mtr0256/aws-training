@@ -3,12 +3,14 @@
 社内のクラウドを触ったことのない人たち向けにAWSのリソースを使ってもらいクラウドの手軽さを知ってもらう。  
 
 ## 目次  
+- 最終成果物のイメージ  
 - VPCで仮想ネットワークを構築する  
 - EC2(仮想サーバー)を構築し、webサーバーをインストールする  
 - リソースのクリーンアップ  
 
+## 最終成果物のイメージ  
+![](./picture/architecture.jpg)
 
-## クラウドの概要  
 ## VPCで仮想ネットワークを構築する  
 1. コンソールからVPCを選択し、【VPCウィザードの起動】を選択  
 2. 【1個のパブリックサブネットを持つVPC】を選択  
@@ -37,9 +39,8 @@ sudo yum install nginx -y
 10. GitHubからプロジェクトをダウンロードし、Nginxにindex.htmlをマウントしNginxを起動  
 
 ```
-git clone 
-cd 
-
+git clone https://github.com/takapon564/aws-training.git
+cd aws-training/getting-start-aws
 sudo cp index.html /usr/share/nginx/html 
 sudo service  nginx start
 ```
