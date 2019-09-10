@@ -20,28 +20,23 @@
 
 ## EC2(仮想サーバー)を構築しwebサーバーをインストールする  
 1. コンソールからEC2を選択し【インスタンスの作成】を選択  
-2. AMIをAmazon Linux2、インスタンスタイプをt2.microに設定し、【次の手順】を選択  
+2. AMIをAmazon Linux、インスタンスタイプをt2.microに設定し、【次の手順】を選択  
 3. ネットワーク、サブネットの欄に自分で作成したものを選択、【自動割り当てパブリックIP】の設定を有効にする(これを有効にしないとIPが割り当てられずSSH接続ができない) 
 4. ストレージの設定はデフォルト  
 5. 【タグの追加】の設定ではキーにName,値に任意の名前をつける 
-6. セキュリティグループの設定ではHTTP(ポート番号80)をルールに追加する  
+6. セキュリティグループの設定ではHTTP(ポート番号80)をルールに追加する。名前は任意。  
 7. 【起動】を選択するとキーペアの作成の有無を聞かれるので新規に作成する  
 8. 適当なディレクトリを作成し、そこにダウンロードしたpemファイル(秘密鍵)を置く。  
 `ssh -i <your-key>.pem ec2-user@xxx.xxx.xxx.xxx`
-9. gitクライアントやNginxのインストール  
+9. Nginxのインストール  
 
 ```
-sudo yum  update -y
-sudo yum install git -y
 sudo yum install nginx -y
 ```
 
-10. GitHubからプロジェクトをダウンロードし、Nginxにindex.htmlをマウントしNginxを起動  
+10. Nginxを起動しIPアドレスをブラウザに貼り付け確認    
 
 ```
-git clone https://github.com/takapon564/aws-training.git
-cd aws-training/getting-start-aws
-sudo cp index.html /usr/share/nginx/html 
 sudo service  nginx start
 ```
 
