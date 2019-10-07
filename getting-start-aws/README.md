@@ -9,7 +9,7 @@
 - リソースのクリーンアップ  
 
 ## 最終成果物のイメージ  
-![](./picture/architecture.jpg)
+![](./picture/simple-architecure.jpg)
 
 ## VPCで仮想ネットワークを構築する  
 1. コンソールからVPCを選択し、【VPCウィザードの起動】を選択  
